@@ -1,0 +1,30 @@
+{
+  "name": "sandbox-repo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test",
+    "build": "parcel build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amarouane-ABDELHAK/sandbox-repo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amarouane-ABDELHAK/sandbox-repo/issues"
+  },
+  "homepage": "https://github.com/amarouane-ABDELHAK/sandbox-repo#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.0",
+    "mocha-junit-reporter": "^2.0.0",
+    "parcel": "^1.12.4"
+  }
+}
