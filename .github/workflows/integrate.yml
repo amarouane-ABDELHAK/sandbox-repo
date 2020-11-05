@@ -19,6 +19,9 @@ jobs:
             - name: capture push
               if:  github.event_name == 'push'
               run: echo "it is a push"
+            - name: Get the version
+              id: get_version
+              run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/tags\//}
             - name: test
               if: github.event_name == 'pull_request'
               run: |
