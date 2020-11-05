@@ -20,7 +20,10 @@ jobs:
               if:  github.event_name == 'push'
               run: echo "it is a push"
             - name: test
-              if: github.event_name == 'merge_request'
-              run: npm ci && npm test && npm run build
+              if: github.event_name == 'pull_request'
+              run: |
+                npm ci
+                npm test
+                npm run build
 
 
