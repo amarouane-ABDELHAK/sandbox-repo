@@ -3,15 +3,29 @@ name: My actions demo
 on: 
     pull_request:
         branches: [ master ]
+    merge_request:
+        branches: [ master ]
+    push:
+
     
 jobs:
-    test_pull_request:
+    start_workflow:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v1
-              with:
+            - name: Checkout code
+              uses: actions/checkout@v1
+            - name: capture push
+              if:  github.event_name == 'push'
+              run: echo "it is a push"
+            - name: test
+              if: github.event_name == 'merge_request'
+              run: echo "it is an MR"
+            
+              uses: actions/setup-node@v1
+                with:
                 node-version: 12
-            - run: npm ci
-            - run: npm test
-            - run: npm run build
+              run: npm ci
+              run: npm test
+              run: npm run build
+
+
