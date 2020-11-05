@@ -20,12 +20,5 @@ jobs:
             - name: test
               if: github.event_name == 'merge_request'
               run: echo "it is an MR"
-            
-              uses: actions/setup-node@v1
-                with:
-                    node-version: 12
-              run: npm ci
-              run: npm test
-              run: npm run build
 
 
